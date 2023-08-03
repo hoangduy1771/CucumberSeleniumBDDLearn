@@ -8,7 +8,7 @@ Feature: Feature to test login function
     And User clicks on login button
     Then User can navigate to the homepage
     Examples:
-      | username | password | browser  |
+      | username | password | browser   |
       | example  | 12345    | "Chrome"  |
       | HoangDuy | 12345    | "Chrome"  |
       | example  | 12345    | "Firefox" |
