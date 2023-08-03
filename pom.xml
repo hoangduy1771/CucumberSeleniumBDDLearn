@@ -20,18 +20,6 @@
     </properties>
 
     <dependencies>
-        <!-- Serenity DEPENDENCIES-->
-        <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-core -->
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-core</artifactId>
-            <version>${serenity.version}</version>
-        </dependency>
-<!--        <dependency>-->
-<!--            <groupId>net.serenity-bdd</groupId>-->
-<!--            <artifactId>serenity-junit5</artifactId>-->
-<!--            <version>${serenity.version}</version>-->
-<!--        </dependency>-->
         <!-- Log4J DEPENDENCY-->
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
         <dependency>
@@ -55,38 +43,25 @@
             <version>7.4.0</version>
             <scope>compile</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.4.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.11.0</version>
+        </dependency>
+
 
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.1.2</version>
-                <configuration>
-                    <includes>
-                        <include>**/TestRunner*.java</include>
-                        <reuseForks>true</reuseForks>
-                        <argLine>-Xmx1024m</argLine>
-                    </includes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -98,58 +73,6 @@
                         <arg>-parameters</arg>
                     </compilerArgs>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.serenity-bdd.maven.plugins</groupId>
-                <artifactId>serenity-maven-plugin</artifactId>
-                <version>${serenity.maven.version}</version>
-                <executions>
-                    <execution>
-                        <id>serenity-reports</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>aggregate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.serenity-bdd</groupId>
-                        <artifactId>serenity-core</artifactId>
-                        <version>${serenity.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>net.serenity-bdd</groupId>
-                        <artifactId>serenity-reports</artifactId>
-                        <version>3.8.1</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.3.0</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <version>3.5.0</version>
             </plugin>
         </plugins>
     </build>

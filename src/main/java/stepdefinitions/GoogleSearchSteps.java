@@ -4,9 +4,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import net.serenitybdd.core.Serenity;
-import net.serenitybdd.core.steps.UIInteractions;
-import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -66,7 +63,7 @@ public class GoogleSearchSteps {
     @Then("User can view the results")
     public void userCanViewTheResults() {
         driver.getPageSource().contains("Time in Ho Chi Minh City");
-        driver.close();
+//        driver.close();
     }
 
 }
