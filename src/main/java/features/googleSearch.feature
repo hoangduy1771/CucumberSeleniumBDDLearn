@@ -4,5 +4,5 @@ Feature: Feature testing Google search functionality
     Given User open browser
     And User navigate to Google
     When User enters text in the search box
-    And User click Search
+    And User click "Google Search" button in Google
     Then User can view the results
