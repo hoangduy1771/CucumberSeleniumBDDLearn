@@ -7,7 +7,11 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         features="src/main/java/features",
         glue={"stepdefinitions"},
-        plugin = {"pretty"},
+        plugin = {"pretty",
+                "junit:target/JUnitReports/report.xml",
+                "json:target/JSONReports/report.json",
+                "html:target/htmlReports"
+        },
         tags = "@test",
         monochrome = true
 )
